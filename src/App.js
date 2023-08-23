@@ -1,23 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import CreateArea from './CreateArea';
+import Note from './Note';
+import Header from './Header';
+import { useState } from 'react';
 
-function App() {
+function App(){
+
+  const [Notes, setNotes] = useState([])
+
+function submitNote(Note){
+  setNotes((prevValue)=>{
+    return[...prevValue, Note]
+  })
+}
+
+
+function deleteItems(id){
+  setNotes((prevValue)=>{
+    return prevValue.filter((currentItem, index)=>{
+        return index !== id 
+    })
+  })
+}
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <CreateArea onAdd={submitNote} />
+      {
+        Notes.map((todoitem, index)=>{
+          return <Note id={index} key={index} title={todoitem.title} note={todoitem.note} onDelete={deleteItems} />
+        })
+      }
+      
     </div>
   );
 }

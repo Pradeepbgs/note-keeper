@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+
+.header{
+  background-color: moccasin;
+  padding: 1px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header h1{
+  margin-left: 30px;
+  font-family: cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container form{
+  background-color: lightblue;
+  padding: 10px;
+  width: 90%;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 0px 4px 8px rgba(0,0,0,.4);
 }
 
-.App-link {
-  color: #61dafb;
+.container textarea{
+  font-size: 20px;
+  border: none;
+  top: 30px;
+  height: 70px;
+  margin-top: 5px;
+  width: 100%;
+  background-color: lightblue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container input{
+  font-size: 20px;
+    height: 30px;
+    border: none;
+    width: 100%;
+    background-color: lightblue;
+}
+
+.container button{
+   position: absolute;
+   top: 76%;
+   left: 86%;
+   width: 50px;
+   height: 50px;
+   border-radius: 100%;
+   background-color:rgb(167, 246, 167);
+   cursor: pointer;
+   border: none;
+   box-shadow: 0px 4px 6px rgba(0,0,0,.4);
+}
+
+.container button:hover{
+   background-color: lightgreen;
+}
+
+.note{
+  position: relative;
+  float: left;
+  width: 20%;
+  background-color: lightgreen;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 7px rgba(0,0,0,.3);
+}
+
+.singleNote button{
+  position: absolute;
+  bottom:90px;
+  left:240px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.singleNote button:hover{
+    color: white;
+    background-color: rgb(255, 143, 143);
+}
+
+.singleNote{
+  word-wrap: break-word;
 }
